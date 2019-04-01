@@ -1,0 +1,21 @@
+<mat-card *ngIf="records" style="max-height:70vh;overflow-y: scroll">
+
+  <mat-list>
+    <mat-list-item *ngFor="let rec of records">
+     
+      <a [routerLink]="['pokemon/'+rec.id]">{{rec.name}}</a>
+     
+    </mat-list-item>
+
+  </mat-list>
+
+
+</mat-card>
+<mat-paginator #paginator
+              [length]="length"
+              [pageIndex]="pageIndex"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              (page)="getServerData($event)"
+              >
+</mat-paginator>

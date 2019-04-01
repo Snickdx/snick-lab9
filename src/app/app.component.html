@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" style="margin-bottom: 10px">
+  <span>Pokemon App</span>
+</mat-toolbar>
+
+<mat-grid-list cols="5" rows="1" rowHeight="90vh" style="background: #EEEEEE">
+  <mat-grid-tile colspan="2" rowspan="1" >
+    <app-pokemon></app-pokemon>
+  </mat-grid-tile>
+   <mat-grid-tile colspan="3" rowspan="1">
+    <router-outlet></router-outlet>
+  </mat-grid-tile>
+</mat-grid-list>
