@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {PageEvent} from '@angular/material';
+import {environment} from '../environment';
 
-//standard imports
-
-const BASE_URL = 'https://pacific-headland-85124.herokuapp.com';//endpont url
 
 //standard component boilerplate code
 @Component({
@@ -24,14 +22,14 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit() {
     //use module to perfrom ajax, must use arrow anonymous function
-    this.http.get(`${BASE_URL}/api/pokemon`).subscribe(data=>{
+    this.http.get(`${environment.BASE_URL}/api/pokemon`).subscribe(data=>{
       this.records = data;//set records to data received 
     })
   }
 
   getServerData(pageEvent){
     console.log(pageEvent);
-    this.http.get(`${BASE_URL}/api/pokemon?limit=${pageEvent.pageSize}&offset=${pageEvent.pageIndex+1}`).subscribe(data=>{
+    this.http.get(`${environment.BASE_URL}/api/pokemon?limit=${pageEvent.pageSize}&offset=${pageEvent.pageIndex+1}`).subscribe(data=>{
       this.records = data;//set records to data received 
     })
   }

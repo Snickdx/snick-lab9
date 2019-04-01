@@ -1,5 +1,13 @@
 <mat-toolbar color="primary" style="margin-bottom: 10px">
   <span>Pokemon App</span>
+  <span style=" flex: 1 1 auto;"></span>
+
+
+  <button *ngIf="!loggedIn" mat-button (click)="openDialog()" >Login</button>
+  <button *ngIf="loggedIn" mat-button>Logout</button>
+  <button  [routerLink]="['/pokemon/1']" mat-button>Pokemon</button>
+  <button  [routerLink]="['trainer']" mat-button>Roles</button>
+  
 </mat-toolbar>
 
 <mat-grid-list cols="5" rows="1" rowHeight="90vh" style="background: #EEEEEE">

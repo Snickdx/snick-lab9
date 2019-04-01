@@ -1,0 +1,12 @@
+<mat-card *ngIf="token === null">
+  <h1>Login To See Trainers</h1>
+</mat-card>
+
+<mat-list>
+  <mat-card *ngFor="let record of records">
+    <mat-card-header>
+      <mat-card-title>{{record.username}}</mat-card-title>
+      <mat-card-subtitle>{{record.role}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</mat-list>

@@ -1,8 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-
-const BASE_URL = 'https://pacific-headland-85124.herokuapp.com';//endpont url
+import {environment} from '../environment';
 
 @Component({
   selector: 'pokemon-detail',//selector/ custom element name
@@ -27,7 +26,7 @@ export class PokemonDetailComponent implements OnInit {
    ngOnInit() {
       this.route.params.subscribe(params => {
           //params.id contains the value of the id variable in the url
-          this.http.get(`${BASE_URL}/api/pokemon/${params.id}`).subscribe(data=>{
+          this.http.get(`${environment.BASE_URL}/api/pokemon/${params.id}`).subscribe(data=>{
             this.record = data;//pulls data for the pokeid specified in url
           })
       });
